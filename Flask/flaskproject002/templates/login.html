@@ -1,0 +1,64 @@
+<!-- templates/login.html -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <title>Handling of http get and post requests</title>
+    <style>
+        div {
+            width: 400px;
+            border: 1px solid green;
+            padding: 10px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div style="border: 3px solid blue;">
+
+<!-- url_for will route the forms request to
+ appropriate function that user made to handle it -->
+<!-- we will Retrieve submitted values of inputs
+ on the backend side using 'name' field of form. -->
+
+        <h1>Handle GET Request</h1>
+        <!-- method is tell which method will form handle -->
+        <form method = "GET"
+            action = "{{ url_for('handle_get') }}">   <!-- action = "{{ url_for('handle_get') }}"> this action mean when we submit the form it will hit that particular url-->
+            <input type = "text"
+                name ="username"
+                placeholder="Username">
+            <input type = "password"
+                name = "password"
+                placeholder="Password">
+            <button type="submit">submit</button>
+        </form>
+    </div> 
+
+    <div style="border: 3px solid blue;">
+
+<!-- url_for will route the forms request to
+ appropriate function that user made to handle it -->
+<!-- we will Retrieve submitted values of inputs
+ on the backend side using 'name' field of form. -->
+
+        <h1>Handle POST Request</h1>
+        <form method = "POST"
+            action = "{{ url_for('handle_post') }}">
+            <input type = "text"
+                name ="username"
+                placeholder="Username">
+            <input type = "password"
+                name = "password"
+                placeholder="Password">
+            <button type="submit">submit</button>
+        </form>
+    </div> 
+
+    
+</body>
+</html>
+
